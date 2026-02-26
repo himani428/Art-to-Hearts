@@ -216,3 +216,204 @@ html.dark .learn-club-section .text-gray-500 {
 html.dark .learn-club-section h3:hover {
   color: #ffffff !important;
 }
+
+/* ================= Submission Detail Dark Fix ================= */
+
+html.dark .submission-detail {
+  background-color: #0f1115 !important;
+  color: #f3f4f6 !important;
+}
+
+html.dark .submission-detail h1 {
+  color: #f3f4f6 !important;
+}
+
+/* ================= Blog Detail Dark Fix ================= */
+
+html.dark .blog-detail {
+  background-color: #0c0f14 !important;
+  color: #e5e7eb !important;
+}
+
+/* Article content */
+html.dark .blog-detail article {
+  color: #d1d5db !important;
+}
+
+/* Metadata */
+html.dark .blog-detail .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+/* Divider */
+html.dark .blog-detail .border-gray-200 {
+  border-color: #2a2f38 !important;
+}
+
+/* Quote block */
+html.dark .blog-detail .bg-\[\#f3eee9\] {
+  background-color: #141821 !important;
+}
+
+/* ================= Club Detail Dark Fix ================= */
+
+html.dark .club-detail {
+  background-color: #0c0f14 !important;
+  color: #e5e7eb !important;
+}
+
+/* Sidebar */
+html.dark .club-detail .sticky {
+  color: #9ca3af !important;
+}
+
+/* Links in sidebar */
+html.dark .club-detail a {
+  color: #d1d5db;
+}
+
+html.dark .club-detail a:hover {
+  color: #ffffff;
+}
+
+/* Prose fix */
+html.dark .club-detail .prose {
+  color: #d1d5db !important;
+}
+
+html.dark .club-detail .prose blockquote {
+  color: #f87171 !important;
+}
+
+/* Paragraph spacing readability */
+html.dark .club-detail p {
+  color: #d1d5db !important;
+}
+
+/* ================= Editor Detail Dark Fix ================= */
+
+html.dark .editor-detail {
+  background-color: #0c0f14 !important;
+  color: #e5e7eb !important;
+}
+
+html.dark .editor-detail p {
+  color: #d1d5db !important;
+}
+
+/* ================= Podcast Article Detail Dark Fix ================= */
+
+html.dark .podcast-article-detail {
+  background-color: #0c0f14 !important;
+  color: #e5e7eb !important;
+}
+
+html.dark .podcast-article-detail p {
+  color: #d1d5db !important;
+}
+
+html.dark .podcast-article-detail blockquote {
+  color: #f87171 !important;
+}
+
+html.dark .podcast-article-detail img {
+  filter: brightness(0.9);
+}
+
+/* ================= Podcast Page Dark Fix ================= */
+
+html.dark .podcast-page {
+  background: linear-gradient(
+    to bottom right,
+    #0e1117,
+    #0a0c10
+  ) !important;
+  color: #e5e7eb !important;
+}
+
+/* Episode Cards */
+html.dark .podcast-page .bg-white {
+  background-color: #141821 !important;
+}
+
+html.dark .podcast-page .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+/* Follow / Share Popups */
+html.dark .podcast-page .backdrop-blur-xl {
+  background-color: rgba(20, 24, 33, 0.95) !important;
+  border-color: #2a2f38 !important;
+}
+
+/* Mini Player */
+html.dark .podcast-page .fixed {
+  background-color: rgba(20, 24, 33, 0.95) !important;
+  color: #f3f4f6 !important;
+  border-color: #2a2f38 !important;
+}
+
+/* Description text */
+html.dark .podcast-page .text-gray-600 {
+  color: #9ca3af !important;
+}
+
+/* Spotify button */
+html.dark .podcast-page .bg-black {
+  background-color: #1f2937 !important;
+  color: #ffffff !important;
+}
+
+/* ================= Editor Picks Page Dark Fix ================= */
+
+html.dark .editor-page {
+  background-color: #0c0f14 !important;
+  color: #e5e7eb !important;
+}
+
+/* Card background */
+html.dark .editor-page .bg-white {
+  background-color: #141821 !important;
+}
+
+/* Titles */
+html.dark .editor-page h3 {
+  color: #f3f4f6 !important;
+}
+
+/* Excerpt text */
+html.dark .editor-page .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+/* Meta info */
+html.dark .editor-page .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+/* Image dark tone correction */
+html.dark .editor-page img {
+  filter: brightness(0.9);
+}
+
+/* ================= Gallery Article Detail Dark Fix ================= */
+
+html.dark .gallery-detail {
+  background-color: #0c0f14 !important;
+  color: #e5e7eb !important;
+}
+
+/* Paragraph text */
+html.dark .gallery-detail p {
+  color: #d1d5db !important;
+}
+
+/* Quote styling */
+html.dark .gallery-detail blockquote {
+  color: #f87171 !important;
+}
+
+/* Slight image tone correction */
+html.dark .gallery-detail img {
+  filter: brightness(0.9);
+}

@@ -32,6 +32,7 @@ const PodcastArticleDetail = lazy(() => import("./components/pages/PodcastArticl
 const GalleryArticleDetail = lazy(() => import("./components/pages/GalleryArticleDetail"));
 const EditorPickDetail = lazy(() => import("./components/pages/EditorPickDetail"));
 const EditorPicksPage = lazy(() => import("./components/pages/EditorPicksPage"));
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 /* ---------- LOADING COMPONENT ---------- */
 
@@ -67,6 +68,7 @@ function App() {
     <Router>
       <AnnouncementBar />
       <Navbar />
+      <ScrollToTop />
 
       <Suspense fallback={<Loader />}>
         <Routes>

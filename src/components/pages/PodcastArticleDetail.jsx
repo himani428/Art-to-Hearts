@@ -14,7 +14,7 @@ export default function PodcastArticleDetail() {
   if (!article) return <div>Not Found</div>;
 
   return (
-    <div ref={ref} className="bg-[#f8f5f1] dark:bg-[#0c0f14]">
+    <div ref={ref} className="podcast-article-detail bg-[#f8f5f1] dark:bg-[#0c0f14]">
 
       {/* Reading Progress */}
       <motion.div

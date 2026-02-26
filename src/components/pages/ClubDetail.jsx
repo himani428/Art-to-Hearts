@@ -22,7 +22,7 @@ const ClubDetail = () => {
   if (!article) return <div>Not Found</div>;
 
   return (
-    <div ref={ref} className="bg-[#f8f5f1] dark:bg-[#0c0f14] text-[#1a1a1a] dark:text-white">
+    <div ref={ref} className="club-detail bg-[#f8f5f1] dark:bg-[#0c0f14] text-[#1a1a1a] dark:text-white" >
 
       {/* Reading Progress Bar */}
       <motion.div

@@ -17,7 +17,7 @@ export default function GalleryArticleDetail() {
   if (!article) return <div>Not Found</div>;
 
   return (
-    <div ref={ref} className="bg-[#f8f5f1] dark:bg-[#0c0f14]">
+    <div ref={ref} className="gallery-detail bg-[#f8f5f1] dark:bg-[#0c0f14]">
 
       {/* Scroll Progress */}
       <motion.div

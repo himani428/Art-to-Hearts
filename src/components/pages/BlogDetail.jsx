@@ -30,7 +30,7 @@ const BlogDetail = () => {
   }
 
   return (
-    <section ref={ref} className="relative bg-[#fdfcf9] dark:bg-[#0c0f14] text-[#1a1a1a] dark:text-gray-200 overflow-hidden">
+    <section ref={ref} className="blog-detail relative bg-[#fdfcf9] dark:bg-[#0c0f14] text-[#1a1a1a] dark:text-gray-200 overflow-hidden">
       {/* Reading Progress Bar */}
       <motion.div
         style={{ scaleX }}

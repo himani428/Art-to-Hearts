@@ -44,7 +44,7 @@ export default function PodcastPage() {
   const episodeId = active.spotify.split("/episode/")[1]?.split("?")[0];
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#f6f3ee] via-white to-[#f1ece5] dark:from-[#0e1117] dark:to-[#0a0c10] py-24 px-6 relative">
+    <section className="podcast-page min-h-screen bg-gradient-to-br from-[#f6f3ee] via-white to-[#f1ece5] dark:from-[#0e1117] dark:to-[#0a0c10] py-24 px-6 relative">
 
       <div className="max-w-7xl mx-auto">
 

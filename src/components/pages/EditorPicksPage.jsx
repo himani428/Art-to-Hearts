@@ -4,7 +4,7 @@ import { editorPicks } from "../../data/editorPicks";
 
 export default function EditorPicksPage() {
   return (
-    <section className="min-h-screen bg-[#f8f5f1] dark:bg-[#0c0f14] py-28">
+    <section className="editor-page min-h-screen bg-[#f8f5f1] dark:bg-[#0c0f14] py-28">
       <div className="max-w-7xl mx-auto px-6">
 
         <motion.h1
