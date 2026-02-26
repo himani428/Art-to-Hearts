@@ -15,10 +15,38 @@ const Navbar = () => {
 
   const searchRef = useRef(null);
 
+  /* ================= DARK MODE PERSIST ================= */
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setDark(true);
+    }
+  }, []);
+
+  const toggleDark = () => {
+    if (dark) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+
+    setDark(!dark);
+  };
+
+  /* ================= SCROLL ================= */
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  /* ================= SEARCH CLOSE ================= */
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -27,12 +55,8 @@ const Navbar = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  const toggleDark = () => {
-    document.documentElement.classList.toggle("dark");
-    setDark(!dark);
-  };
 
   const suggestions = [
     "Zoom Art Tours",
@@ -47,32 +71,17 @@ const Navbar = () => {
       name: "BOOKS",
       dropdown: true,
       items: [
-        {
-          label: "Artists To Watch",
-          sub: ["Emerging 2026", "Rising Women Artists"]
-        },
-        {
-          label: "100 Artwork Series",
-          sub: ["2024 Edition", "2023 Edition"]
-        },
-        {
-          label: "Studio Visit Books",
-          sub: ["Vol 6", "Vol 7"]
-        }
+        { label: "Artists To Watch", sub: ["Emerging 2026", "Rising Women Artists"] },
+        { label: "100 Artwork Series", sub: ["2024 Edition", "2023 Edition"] },
+        { label: "Studio Visit Books", sub: ["Vol 6", "Vol 7"] }
       ]
     },
     {
       name: "SHOP",
       dropdown: true,
       items: [
-        {
-          label: "Digital Templates",
-          sub: ["Catalog Template", "Expense Tracker"]
-        },
-        {
-          label: "Artist Tools",
-          sub: ["Branding Kit", "Portfolio Builder"]
-        }
+        { label: "Digital Templates", sub: ["Catalog Template", "Expense Tracker"] },
+        { label: "Artist Tools", sub: ["Branding Kit", "Portfolio Builder"] }
       ]
     },
     {
@@ -105,12 +114,12 @@ const Navbar = () => {
         <div className="container-custom flex justify-between items-center h-[88px]">
 
           {/* Logo */}
-          <div className="text-2xl font-semibold tracking-tight">
+          <div className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
             arts <span className="italic">to</span> hearts
           </div>
 
           {/* Center Menu */}
-          <ul className="hidden lg:flex gap-8 items-center text-sm uppercase tracking-wide">
+          <ul className="hidden lg:flex gap-8 items-center text-sm uppercase tracking-wide text-gray-800 dark:text-gray-200">
             {menuItems.map((menu, index) => (
               <li
                 key={index}
@@ -130,7 +139,6 @@ const Navbar = () => {
                   <FiChevronDown className="text-[14px] mt-[2px]" />
                 )}
 
-                {/* Dropdown */}
                 <AnimatePresence>
                   {menu.dropdown && activeMenu === menu.name && (
                     <motion.div
@@ -144,9 +152,7 @@ const Navbar = () => {
                         {menu.items.map((item, i) => (
                           <li key={i}>
                             <div
-                              onMouseEnter={() =>
-                                setActiveSubMenu(item.label)
-                              }
+                              onMouseEnter={() => setActiveSubMenu(item.label)}
                               className="flex justify-between items-center hover:text-red-600"
                             >
                               {item.label}
@@ -188,7 +194,7 @@ const Navbar = () => {
             <div ref={searchRef} className="relative">
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="text-xl hover:scale-110 transition"
+                className="text-xl hover:scale-110 transition text-gray-800 dark:text-gray-200"
               >
                 <FiSearch />
               </button>
@@ -206,31 +212,17 @@ const Navbar = () => {
                       placeholder="Search..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full p-3 border rounded-md dark:bg-[#111]"
+                      className="w-full p-3 border rounded-md bg-white dark:bg-[#111] text-gray-900 dark:text-white"
                     />
-
-                    <ul className="mt-3 space-y-2 text-sm">
-                      {suggestions
-                        .filter((s) =>
-                          s.toLowerCase().includes(searchTerm.toLowerCase())
-                        )
-                        .map((s, i) => (
-                          <li
-                            key={i}
-                            className="hover:text-red-600 cursor-pointer"
-                          >
-                            {s}
-                          </li>
-                        ))}
-                    </ul>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
+            {/* Dark Toggle */}
             <button
               onClick={toggleDark}
-              className="text-xl hover:scale-110 transition"
+              className="text-xl hover:scale-110 transition text-gray-800 dark:text-gray-200"
             >
               {dark ? <FiSun /> : <FiMoon />}
             </button>
@@ -240,7 +232,7 @@ const Navbar = () => {
                 setAuthType("login");
                 setAuthOpen(true);
               }}
-              className="text-sm hover:text-red-600 transition"
+              className="text-sm hover:text-red-600 transition text-gray-800 dark:text-gray-200"
             >
               Login
             </button>

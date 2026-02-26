@@ -39,7 +39,7 @@ const artStars = [
 
 const ArtStarSection = () => {
   return (
-    <section className="relative py-40 overflow-hidden bg-gradient-to-b from-[#f6f4f1] to-white dark:from-[#0b0e13] dark:to-[#07090d]">
+    <section className="art-star-section relative py-40 overflow-hidden bg-gradient-to-b from-[#f6f4f1] to-white dark:from-[#0b0e13] dark:to-[#07090d]">
 
       {/* Ambient Glow Background */}
       <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#273F5B]/10 rounded-full blur-3xl animate-pulse"></div>

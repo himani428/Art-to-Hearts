@@ -30,10 +30,7 @@ const BlogDetail = () => {
   }
 
   return (
-    <section
-      ref={ref}
-      className="relative bg-[#fdfcf9] text-[#1a1a1a] overflow-hidden"
-    >
+    <section ref={ref} className="relative bg-[#fdfcf9] dark:bg-[#0c0f14] text-[#1a1a1a] dark:text-gray-200 overflow-hidden">
       {/* Reading Progress Bar */}
       <motion.div
         style={{ scaleX }}
@@ -95,7 +92,7 @@ const BlogDetail = () => {
         className="max-w-3xl mx-auto px-6 py-28"
       >
         {/* Metadata */}
-        <div className="text-sm text-gray-500 tracking-wide mb-16">
+        <div className="text-sm text-gray-500 dark:text-gray-400 tracking-wide mb-16">
           {blog.date} • {blog.readTime}
         </div>
 
@@ -123,7 +120,7 @@ const BlogDetail = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="my-20 p-12 bg-[#f3eee9] rounded-2xl text-center font-serif text-2xl leading-relaxed"
+          className="my-20 p-12 bg-[#f3eee9] dark:bg-[#141821] dark:bg-[#141821] rounded-2xl text-center font-serif text-2xl leading-relaxed"
         >
           “Creativity isn’t just expression — it’s transformation.”
         </motion.div>

@@ -4,7 +4,7 @@ import { learnClubPosts } from "../../data/learnClub";
 
 const LearnThisWeekSection = () => {
   return (
-    <section className="py-36 bg-gradient-to-b from-white to-[#f3efe9] dark:from-[#0c0f14] dark:to-[#0a0c10]">
+    <section className="learn-club-section py-36 bg-gradient-to-b from-white to-[#f3efe9] dark:from-[#0c0f14] dark:to-[#0a0c10]">
 
       <div className="container-custom">
 

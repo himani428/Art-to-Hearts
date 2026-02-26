@@ -1,15 +1,22 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ================= GLOBAL RESET ================= */
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #111;
+  @apply bg-white text-gray-900 dark:bg-[#0c0f14] dark:text-gray-200 transition-colors duration-300;
 }
 
-h1,h2,h3,h4 {
+h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
 }
+
+/* ================= LAYOUT ================= */
 
 .container-custom {
   max-width: 1300px;
@@ -18,21 +25,24 @@ h1,h2,h3,h4 {
 }
 
 .section {
+  padding: 120px 0;
+}
+
+.section-sm {
   padding: 80px 0;
 }
 
+/* ================= BUTTON ================= */
+
 .btn-primary {
-  background: black;
-  color: white;
-  padding: 12px 24px;
-  font-size: 14px;
-  letter-spacing: 1px;
-  transition: 0.3s ease;
+  @apply bg-black text-white px-6 py-3 rounded-md transition-all duration-300;
 }
 
 .btn-primary:hover {
-  background: #333;
+  @apply bg-gray-800;
 }
+
+/* ================= UTILITIES ================= */
 
 .perspective {
   perspective: 1000px;
@@ -42,68 +52,167 @@ h1,h2,h3,h4 {
   backface-visibility: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
+/* ================= REMOVE ALL OLD DARK OVERRIDES ================= */
+/* DO NOT manually override bg-white, text-gray-500, sections, etc */
+/* Tailwind handles dark mode automatically */
+
+
+/* ================= GLOBAL DARK THEME FIX ================= */
+
+html.dark {
+  background-color: #0c0f14;
 }
 
-/* Dark Mode */
-/* Enable Tailwind dark mode globally */
 html.dark body {
-  background-color: #0f0f0f;
-  color: #f1f1f1;
+  background-color: #0c0f14 !important;
+  color: #e5e7eb !important;
 }
 
 html.dark section {
-  background-color: #0f0f0f;
+  background-color: #0c0f14 !important;
+  color: #e5e7eb !important;
 }
 
-html.dark .bg-white {
-  background-color: #1a1a1a !important;
+html.dark .bg-white,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100 {
+  background-color: #141821 !important;
 }
 
-html.dark .bg-gray-50 {
-  background-color: #111 !important;
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark .text-gray-700 {
+  color: #f3f4f6 !important;
 }
 
+html.dark .text-gray-600,
 html.dark .text-gray-500 {
-  color: #aaa !important;
+  color: #9ca3af !important;
+}
+html.dark .border-gray-200,
+html.dark .border-gray-300 {
+  border-color: #2a2f38 !important;
 }
 
 html.dark nav {
-  background-color: #111 !important;
+  background-color: #11151c !important;
+  color: #f3f4f6 !important;
 }
 
 html.dark footer {
   background-color: #4b0c13 !important;
+  color: #f3f4f6 !important;
 }
 
-.btn-primary {
-  background: black;
-  color: white;
-  padding: 12px 24px;
-  transition: all 0.3s ease;
-  border-radius: 6px;
+html.dark input,
+html.dark textarea {
+  background-color: #1a1f28 !important;
+  color: #f3f4f6 !important;
+  border-color: #2a2f38 !important;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+html.dark .bg-black {
+  background-color: #e5e7eb !important;
+  color: #111 !important;
 }
 
-h1 {
-  font-size: clamp(2.8rem, 5vw, 4.2rem);
-  line-height: 1.1;
+html.dark [class*="from-[#f"] {
+  --tw-gradient-from: #0c0f14 !important;
 }
 
-h2 {
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  margin-bottom: 2rem;
+html.dark [class*="to-[#f"] {
+  --tw-gradient-to: #0c0f14 !important;
 }
 
-.section {
-  padding: 120px 0;
+/* ================= Divider CTA Dark Fix ================= */
+
+html.dark .divider-cta {
+  background: linear-gradient(
+    135deg,
+    #0f1720 0%,
+    #111827 50%,
+    #0c0f14 100%
+  ) !important;
+  color: #f3f4f6 !important;
 }
 
-.section-sm {
-  padding: 80px 0;
+/* Make sure button is visible in dark */
+html.dark .divider-cta button {
+  background-color: #dc2626 !important;
+  color: white !important;
+}
+
+html.dark .divider-cta button:hover {
+  background-color: #b91c1c !important;
+}
+
+/* ================= Art Star Dark Fix ================= */
+
+html.dark .art-star-section {
+  background: linear-gradient(
+    180deg,
+    #0b0e13 0%,
+    #07090d 100%
+  ) !important;
+}
+
+/* Make heading visible */
+html.dark .art-star-section h2 {
+  color: #f3f4f6 !important;
+}
+
+/* Card background */
+html.dark .art-star-section .bg-white {
+  background-color: #11151c !important;
+}
+
+/* Month badge */
+html.dark .art-star-section .bg-white\/90 {
+  background-color: rgba(20, 24, 33, 0.95) !important;
+  color: #f3f4f6 !important;
+}
+
+/* Link hover colors in dark */
+html.dark .art-star-section a {
+  color: #d1d5db;
+}
+
+html.dark .art-star-section a:hover {
+  color: #ffffff;
+}
+
+/* ================= Learn Club Dark Fix ================= */
+
+html.dark .learn-club-section {
+  background: linear-gradient(
+    180deg,
+    #0c0f14 0%,
+    #0a0c10 100%
+  ) !important;
+}
+
+/* Heading */
+html.dark .learn-club-section h2 {
+  color: #f3f4f6 !important;
+}
+
+/* Small header text */
+html.dark .learn-club-section p {
+  color: #9ca3af !important;
+}
+
+/* Badge */
+html.dark .learn-club-section .bg-gray-200 {
+  background-color: #1a1e25 !important;
+  color: #f3f4f6 !important;
+}
+
+/* Date text */
+html.dark .learn-club-section .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+/* Hover color */
+html.dark .learn-club-section h3:hover {
+  color: #ffffff !important;
 }
